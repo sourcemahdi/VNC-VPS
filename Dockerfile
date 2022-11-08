@@ -65,6 +65,7 @@ RUN wget --no-check-certificate https://dl.google.com/linux/linux_signing_key.pu
 RUN wget --no-check-certificate -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY -O /app/anydesk.key
 RUN apt-key add /app/anydesk.key
 RUN apt-key add /app/linux_signing_key.pub
+RUN curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh
 RUN set -ex; \
     apt-get update \
     && apt-get install -y --no-install-recommends \
